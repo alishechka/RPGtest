@@ -2,8 +2,8 @@ package myGame;
 
 public class Player {
 
-    private int HP=100;
-    private int DMG=10;
+    private  int HP=100;
+    private  int DMG=10;
 
     public Player() {
     }

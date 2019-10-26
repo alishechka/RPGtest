@@ -1,11 +1,20 @@
 package myGame;
 
-public class items {
+public class Items {
     private int wood = 0;
     private int steel = 0;
     private int tools = 0;
+    private int healthPotion=1;
 
-    public items() {
+    public int getHealthPotion() {
+        return healthPotion;
+    }
+
+    public void setHealthPotion(int healthPotion) {
+        this.healthPotion = healthPotion;
+    }
+
+    public Items() {
 
     }
 
@@ -35,10 +44,11 @@ public class items {
 
     @Override
     public String toString() {
-        return "items{" +
+        return "Items{" +
                 "wood=" + wood +
                 ", steel=" + steel +
                 ", tools=" + tools +
+                ", healthPotion=" + healthPotion +
                 '}';
     }
 }
