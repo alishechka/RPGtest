@@ -20,16 +20,23 @@ public class App {
             String name = sc.nextLine();
             System.out.println("your name is " + name);
             System.out.println("you have wood: " + it.getWood() + " steel: " + it.getSteel() + " tools: " + it.getTools());
-            while (player.getHP() > 0 || enemy.getHP() > 0) {
+            while (player.getHP() > 0 && enemy.getHP() > 0) {
                 System.out.println("monster has health of " + enemy.getHP());
                 System.out.println("your HP is " + player.getHP());
                 System.out.println("ATTACK");
                 System.out.println("1 for attack");
-                int input =sc.nextInt();
-                if (input==1){
-                   enemy.setHP(enemy.getHP() - player.getDMG());
-                    System.out.println("monster has hp of "+enemy.getHP());
-                }else{
+                System.out.println("2 for potion heal");
+                int input = sc.nextInt();
+                if (input == 1) {
+                    enemy.setHP(enemy.getHP() - player.getDMG());
+                    player.setHP(player.getHP() - enemy.getDMG());
+                    System.out.println("monster has hp of " + enemy.getHP());
+                    System.out.println("your HP is " + player.getHP());
+
+                }else if(input == 2){
+                    player.setHP(player.getHP()+30);
+
+                } else {
                     System.out.println("wrong command");
                 }
 
