@@ -1,10 +1,11 @@
-package myGame;
+package myGame.service;
 
-public class Enemy {
-    private int HP=50;
-    private int DMG=5;
+public class Player {
 
-    public Enemy() {
+    private  int HP=100;
+    private  int DMG=10;
+
+    public Player() {
     }
 
     public int getHP() {
