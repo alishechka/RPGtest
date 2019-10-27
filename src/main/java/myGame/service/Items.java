@@ -1,4 +1,4 @@
-package myGame;
+package myGame.service;
 
 public class Items {
     private int wood = 0;

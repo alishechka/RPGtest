@@ -1,2 +1,7 @@
 *.iml
 *.idea
+/out
+/target
+*myGame/App.java
+*myGame/dice.java
+*myGame/test2.java

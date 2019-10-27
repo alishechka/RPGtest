@@ -1,4 +1,4 @@
-package myGame;
+package myGame.service;
 
 import java.util.*;
 

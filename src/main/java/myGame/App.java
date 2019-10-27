@@ -1,3 +1,5 @@
+package myGame;
+
 import java.util.*;
 class driver {
     static Scanner scan = new Scanner(System.in);
