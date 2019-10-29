@@ -4,7 +4,10 @@ import java.util.*;
 
 import myGame.domain.enemy.Enemy;
 
+import myGame.domain.item.HealthPotion;
+import myGame.domain.item.Item;
 import myGame.factory.EnemyFactory;
+import myGame.factory.ItemFactory;
 
 public class App {
 
@@ -12,12 +15,15 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         FightService fightService = new FightService();
-        Items items = new Items();
+//        Items items = new Items();
         Player player = new Player();
         EnemyFactory enemyFactory = new EnemyFactory();
         Enemy enemy = enemyFactory.getRandomEnemy();
         boolean game = true;
 
+        //hmmm DRY failed?
+//        HealthPotion healthPotion=new HealthPotion();
+        ItemFactory itemFactory=new ItemFactory();
 
         System.out.println("Hello traveller");
         System.out.println("tell us your name");
@@ -43,16 +49,16 @@ public class App {
                     fightService.fight(player, enemy);
 
                 } else if (input == 2) {
-                    if (items.getHealthPotion() > 0) {
-                        System.out.println("heal for 30HP");
-                        player.setHP(player.getHP() + 30);
-                        items.setHealthPotion(items.getHealthPotion() - 1);
+                    if (healthPotion.getItem() > 0) {
+                        System.out.println("You drink "+ healthPotion.getName()+" and "+healthPotion.getEffect());
+                        player.setHP(player.getHP() + healthPotion.getValue());
+                        healthPotion.setItem(healthPotion.getItem()-1);
                     } else {
                         System.out.println("No potions left :(");
                     }
 
                 } else if (input == 3) {
-                    itemCheck(items);
+                    itemFactory.getInventory();
                 } else {
                     System.out.println("wrong command");
                 }
@@ -67,20 +73,9 @@ public class App {
     }
 
 
-    static void loot(Items items) {
-        items.setHealthPotion(items.getHealthPotion() + 1);
-        items.setSteel(items.getSteel() + 5);
-        items.setWood(items.getWood() + 10);
-        items.setTools(items.getTools() + 1);
-    }
 
-    static void itemCheck(Items items) {
-        System.out.println("you have:"
-                + " \nWood: " + items.getWood()
-                + " \nSteel: " + items.getSteel()
-                + " \nTools: " + items.getTools()
-                + " \nHealthPotions " + items.getHealthPotion());
-    }
+
+
 
 
 }
