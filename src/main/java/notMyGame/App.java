@@ -1,4 +1,4 @@
-package myGame;
+package notMyGame;
 
 import java.util.*;
 class driver {
