@@ -2,8 +2,8 @@ package myGame.domain.item;
 
 public interface Item {
     String getName();
-    int getItem();
-    void setItem(int item);
+    int getQuantity();
+    void setQuantity(int quantity);
     String getEffect();
     int getValue();
 }

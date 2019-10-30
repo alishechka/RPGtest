@@ -16,9 +16,10 @@ public class ItemFactory {
 
     public void getInventory() {
         for (Item item : itemList) {
-            System.out.println("You have: \n" + item.getItem()+" " +item.getName()+"\n");
+            System.out.println("You have: \n" + item.getQuantity()+" " +item.getName()+"\n");
         }
 
     }
+    public void getInventoryQuantaty
 
 }

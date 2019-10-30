@@ -2,7 +2,7 @@ package myGame.domain.item;
 
 public class HealthPotion implements Item {
     private String name="Health Potion";
-    private int item =1;
+    private int quantity =1;
     private String effect="gain 25HP";
     private int value=25;
 
@@ -17,13 +17,13 @@ public class HealthPotion implements Item {
     }
 
     @Override
-    public int getItem() {
-        return item;
+    public int getQuantity() {
+        return quantity;
     }
 
     @Override
-    public void setItem(int item) {
-        this.item=item;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     @Override
