@@ -24,6 +24,8 @@ public class App {
         //hmmm DRY failed?
 //        HealthPotion healthPotion=new HealthPotion();
         ItemFactory itemFactory=new ItemFactory();
+//        int itemHpQuantity = itemFactory.getHpQuantity();
+//        String itemHpname=itemFactory.getHPname();
 
         System.out.println("Hello traveller");
         System.out.println("tell us your name");
@@ -49,10 +51,10 @@ public class App {
                     fightService.fight(player, enemy);
 
                 } else if (input == 2) {
-                    if (healthPotion.getItem() > 0) {
-                        System.out.println("You drink "+ healthPotion.getName()+" and "+healthPotion.getEffect());
-                        player.setHP(player.getHP() + healthPotion.getValue());
-                        healthPotion.setItem(healthPotion.getItem()-1);
+                    if (itemFactory.getHpQuantity() > 0) {
+                        System.out.println("You drink "+ itemFactory.getHPname()+" and "+itemFactory.getHpEffect());
+                        player.setHP(player.getHP() + itemFactory.getHpValue());
+                        itemFactory.setHPquantity(itemFactory.getHpQuantity()-1);
                     } else {
                         System.out.println("No potions left :(");
                     }

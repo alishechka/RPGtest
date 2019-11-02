@@ -20,6 +20,25 @@ public class ItemFactory {
         }
 
     }
-    public void getInventoryQuantaty
+    public int getHpQuantity(){
+        Item item= itemList.get(0);
+        return item.getQuantity();
+    }
+    public String getHPname(){
+        Item item= itemList.get(0);
+        return item.getName();
+    }
+    public void setHPquantity(int quantity){
+        Item item= itemList.get(0);
+        item.setQuantity(quantity);
+    }
 
+    public String getHpEffect(){
+        Item item= itemList.get(0);
+        return item.getEffect();
+    }
+    public int getHpValue(){
+        Item item= itemList.get(0);
+        return item.getValue();
+    }
 }
