@@ -1,5 +1,7 @@
 package myGame.domain.enemy;
 
+import myGame.factory.ItemFactory;
+
 public interface Enemy {
     String getName();
 
@@ -10,6 +12,8 @@ public interface Enemy {
     int getDMG();
 
     void setDMG(int DMG);
+
+    int lootDrop(ItemFactory itemFactory);
 
     Enemy getNewInstance();
 }

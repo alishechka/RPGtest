@@ -4,41 +4,33 @@ import java.util.*;
 
 import myGame.domain.enemy.Enemy;
 
-import myGame.domain.item.HealthPotion;
-import myGame.domain.item.Item;
 import myGame.factory.EnemyFactory;
 import myGame.factory.ItemFactory;
 
 public class App {
-
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         FightService fightService = new FightService();
-//        Items items = new Items();
         Player player = new Player();
         EnemyFactory enemyFactory = new EnemyFactory();
         Enemy enemy = enemyFactory.getRandomEnemy();
-        boolean game = true;
+        ItemFactory itemFactory = new ItemFactory();
 
-        //hmmm DRY failed?
-//        HealthPotion healthPotion=new HealthPotion();
-        ItemFactory itemFactory=new ItemFactory();
-//        int itemHpQuantity = itemFactory.getHpQuantity();
-//        String itemHpname=itemFactory.getHPname();
+        String healthPotion = "Health Potion";
+
+        boolean game = true;
 
         System.out.println("Hello traveller");
         System.out.println("tell us your name");
         String name = sc.nextLine();
         System.out.println("your name is " + name);
-        while (game) {
 
+        while (game) {
             if (enemy.getHP() < 1) {
+                System.out.println("YOU HAVE DEFEATED " + enemy.getName());
                 enemy = enemyFactory.getRandomEnemy();
             }
-
             while (enemy.getHP() > 0) {
-
                 System.out.println(enemy.getName() + " has appeared");
                 System.out.println("monster has health of " + enemy.getHP());
                 System.out.println("your HP is " + player.getHP());
@@ -48,17 +40,15 @@ public class App {
                 System.out.println("3 for item check");
                 int input = sc.nextInt();
                 if (input == 1) {
-                    fightService.fight(player, enemy);
-
+                    fightService.fight(player, enemy, itemFactory);
                 } else if (input == 2) {
-                    if (itemFactory.getHpQuantity() > 0) {
-                        System.out.println("You drink "+ itemFactory.getHPname()+" and "+itemFactory.getHpEffect());
-                        player.setHP(player.getHP() + itemFactory.getHpValue());
-                        itemFactory.setHPquantity(itemFactory.getHpQuantity()-1);
+                    if (itemFactory.getItemQuantity(healthPotion) > 0) {
+                        System.out.println("You drink " + itemFactory.getItemName(healthPotion) + " and " + itemFactory.getItemEffect(healthPotion));
+                        player.setHP(player.getHP() + itemFactory.getItemValue(healthPotion));
+                        itemFactory.setItemQuantity(healthPotion, itemFactory.getItemQuantity(healthPotion) - 1);
                     } else {
                         System.out.println("No potions left :(");
                     }
-
                 } else if (input == 3) {
                     itemFactory.getInventory();
                 } else {
@@ -70,14 +60,6 @@ public class App {
                     game = false;
                 }
             }
-
         }
     }
-
-
-
-
-
-
-
 }
