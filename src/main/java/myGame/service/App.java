@@ -4,6 +4,7 @@ import java.util.*;
 
 import myGame.domain.enemy.Enemy;
 
+import myGame.domain.item.Item;
 import myGame.factory.EnemyFactory;
 import myGame.factory.ItemFactory;
 
@@ -15,9 +16,9 @@ public class App {
         EnemyFactory enemyFactory = new EnemyFactory();
         Enemy enemy = enemyFactory.getRandomEnemy();
         ItemFactory itemFactory = new ItemFactory();
+        Loot loot = new Loot();
 
         String healthPotion = "Health Potion";
-
         boolean game = true;
 
         System.out.println("Hello traveller");
@@ -28,6 +29,7 @@ public class App {
         while (game) {
             if (enemy.getHP() < 1) {
                 System.out.println("YOU HAVE DEFEATED " + enemy.getName());
+                loot.lootDrop(enemy, itemFactory);
                 enemy = enemyFactory.getRandomEnemy();
             }
             while (enemy.getHP() > 0) {
@@ -40,12 +42,14 @@ public class App {
                 System.out.println("3 for item check");
                 int input = sc.nextInt();
                 if (input == 1) {
-                    fightService.fight(player, enemy, itemFactory);
+                    fightService.fight(player, enemy);
                 } else if (input == 2) {
-                    if (itemFactory.getItemQuantity(healthPotion) > 0) {
-                        System.out.println("You drink " + itemFactory.getItemName(healthPotion) + " and " + itemFactory.getItemEffect(healthPotion));
-                        player.setHP(player.getHP() + itemFactory.getItemValue(healthPotion));
-                        itemFactory.setItemQuantity(healthPotion, itemFactory.getItemQuantity(healthPotion) - 1);
+
+                    Item hpit = itemFactory.itemPOJO(healthPotion);
+                    if (hpit.getQuantity() > 0) {
+                        System.out.println("You drink " + hpit.getName() + " and " + hpit.getEffect());
+                        player.setHP(player.getHP() + hpit.getValue());
+                        hpit.setQuantity(hpit.getQuantity() - 1);
                     } else {
                         System.out.println("No potions left :(");
                     }

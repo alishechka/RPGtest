@@ -1,11 +1,16 @@
 package myGame.domain.enemy;
 
-import myGame.factory.ItemFactory;
 
 public class Rat implements Enemy {
 
     private int HP = 20;
     private int DMG = 2;
+    private int dropChance = 20;
+
+    @Override
+    public int getDropChance() {
+        return dropChance;
+    }
 
     @Override
     public String getName() {
@@ -37,10 +42,5 @@ public class Rat implements Enemy {
         return new Rat();
     }
 
-    @Override
-    public int lootDrop(ItemFactory itemFactory) {
-        String healthPotion = "Health Potion";
-        itemFactory.setItemQuantity(healthPotion, itemFactory.getItemQuantity(healthPotion) + 1);
-        return 0;
-    }
+
 }

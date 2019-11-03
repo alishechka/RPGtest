@@ -13,7 +13,7 @@ public interface Enemy {
 
     void setDMG(int DMG);
 
-    int lootDrop(ItemFactory itemFactory);
+    int getDropChance();
 
     Enemy getNewInstance();
 }
