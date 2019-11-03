@@ -1,5 +1,7 @@
 package myGame.domain.enemy;
 
+import myGame.factory.ItemFactory;
+
 public class Wolf implements Enemy {
 
     private int HP = 50;
@@ -33,5 +35,12 @@ public class Wolf implements Enemy {
     @Override
     public Enemy getNewInstance() {
         return new Wolf();
+    }
+
+    @Override
+    public int lootDrop(ItemFactory itemFactory) {
+        String healthPotion = "Health Potion";
+        itemFactory.setItemQuantity(healthPotion, itemFactory.getItemQuantity(healthPotion) + 1);
+        return 0;
     }
 }
