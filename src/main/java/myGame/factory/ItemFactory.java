@@ -14,27 +14,10 @@ public class ItemFactory {
     }
     public void getInventory() {
         for (Map.Entry<String, Item> item : itemMap.entrySet()) {
-            System.out.println("You have: \n" + item.getKey() + " " + getItemQuantity(item.getKey()) + "\n");
+            System.out.println("You have: \n" + item.getKey() + " " + itemPOJO(item.getKey()).getQuantity() + "\n");
         }
     }
-    public int getItemQuantity(String str) {
-        Item item = itemMap.get(str);
-        return item.getQuantity();
-    }
-    public String getItemName(String str) {
-        Item item = itemMap.get(str);
-        return item.getName();
-    }
-    public void setItemQuantity(String str, int quantity) {
-        Item item = itemMap.get(str);
-        item.setQuantity(quantity);
-    }
-    public String getItemEffect(String str) {
-        Item item = itemMap.get(str);
-        return item.getEffect();
-    }
-    public int getItemValue(String str) {
-        Item item = itemMap.get(str);
-        return item.getValue();
+    public Item itemPOJO(String str) {
+        return itemMap.get(str);
     }
 }
