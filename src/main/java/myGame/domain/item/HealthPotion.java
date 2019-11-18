@@ -1,7 +1,7 @@
 package myGame.domain.item;
 
 public class HealthPotion implements Item {
-    private String name = "Health Potion";
+    private String name = ItemType.HEALTH_POTION.getName();
     private String effect = "gain 25HP";
     private int quantity = 1;
     private int value = 25;
