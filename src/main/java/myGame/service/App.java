@@ -43,7 +43,6 @@ public class App {
                 if (input == 1) {
                     fightService.fight(player, enemy);
                 } else if (input == 2) {
-
                     Item hpit = ItemFactory.getItemByType(ItemType.HEALTH_POTION);
                     if (hpit.getQuantity() > 0) {
                         System.out.println("You drink " + hpit.getName() + " and " + hpit.getEffect());
