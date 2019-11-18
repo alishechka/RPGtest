@@ -3,9 +3,6 @@ package myGame.service;
 import java.util.*;
 
 import myGame.domain.enemy.Enemy;
-
-import myGame.domain.item.Item;
-import myGame.domain.item.ItemType;
 import myGame.factory.EnemyFactory;
 import myGame.factory.ItemFactory;
 
@@ -37,20 +34,15 @@ public class App {
                 System.out.println("your HP is " + player.getHP());
                 System.out.println("ATTACK");
                 System.out.println("1 for attack");
-                System.out.println("2 for potion heal");
+                System.out.println("2 for item use");
                 System.out.println("3 for item check");
                 int input = sc.nextInt();
                 if (input == 1) {
                     fightService.fight(player, enemy);
                 } else if (input == 2) {
-                    Item hpit = ItemFactory.getItemByType(ItemType.HEALTH_POTION);
-                    if (hpit.getQuantity() > 0) {
-                        System.out.println("You drink " + hpit.getName() + " and " + hpit.getEffect());
-                        player.setHP(player.getHP() + hpit.getValue());
-                        hpit.setQuantity(hpit.getQuantity() - 1);
-                    } else {
-                        System.out.println("No potions left :(");
-                    }
+                    UseItemService.listItems();
+                    int inputItem = sc.nextInt();
+                    UseItemService.useItem(player,inputItem);
                 } else if (input == 3) {
                     ItemFactory.getInventory();
                 } else {

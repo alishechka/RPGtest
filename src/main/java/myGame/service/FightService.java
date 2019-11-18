@@ -1,7 +1,6 @@
 package myGame.service;
 
 import myGame.domain.enemy.Enemy;
-import myGame.factory.ItemFactory;
 
 public class FightService {
 
