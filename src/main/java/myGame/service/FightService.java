@@ -1,15 +1,12 @@
 package myGame.service;
 
 import myGame.domain.enemy.Enemy;
-import myGame.factory.ItemFactory;
 
 public class FightService {
 
     private LootService lootService;
 
-    public FightService(
-            LootService lootService
-    ) {
+    public FightService(LootService lootService) {
         this.lootService = lootService;
     }
 

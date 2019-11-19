@@ -1,5 +1,6 @@
 package myGame.factory;
 
+import myGame.domain.enemy.Bear;
 import myGame.domain.enemy.Enemy;
 import myGame.domain.enemy.Rat;
 import myGame.domain.enemy.Wolf;
@@ -13,6 +14,7 @@ public class EnemyFactory {
     static {
         enemies.add(new Rat());
         enemies.add(new Wolf());
+        enemies.add(new Bear());
     }
 
     public static Enemy getRandomEnemy() {
