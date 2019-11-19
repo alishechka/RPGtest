@@ -5,7 +5,7 @@ public class Wolf implements Enemy {
 
     private int HP = 50;
     private int DMG = 5;
-    private int dropChance = 50;
+    private int dropChance = 30;
 
     @Override
     public int getDropChance() {

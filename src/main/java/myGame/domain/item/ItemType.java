@@ -5,7 +5,6 @@ public enum ItemType {
     HEALTH_POTION("Health Potion"),
     POTATO("Potato");
 
-
     private String name;
 
     ItemType(String name) {

@@ -5,7 +5,7 @@ public class Rat implements Enemy {
 
     private int HP = 20;
     private int DMG = 2;
-    private int dropChance = 20;
+    private int dropChance = 10;
 
     @Override
     public int getDropChance() {

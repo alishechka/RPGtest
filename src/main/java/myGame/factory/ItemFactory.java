@@ -11,18 +11,18 @@ import java.util.Map;
 public class ItemFactory {
 
     private static Map<ItemType, Item> itemMap = new HashMap<>();
+
     static {
         itemMap.put(ItemType.HEALTH_POTION, new HealthPotion());
         itemMap.put(ItemType.POTATO, new Potato());
-
     }
 
     public static void getInventory() {
-        System.out.println("You have:");
         for (Map.Entry<ItemType, Item> item : itemMap.entrySet()) {
-            System.out.println(item.getKey().getName() + " " + getItemByType(item.getKey()).getQuantity());
+            if (getItemByType(item.getKey()).getQuantity() > 0) {
+                System.out.println(item.getKey().getName() + " " + getItemByType(item.getKey()).getQuantity());
+            }
         }
-        System.out.println("\n");
     }
 
     public static Item getItemByType(ItemType itemType) {
