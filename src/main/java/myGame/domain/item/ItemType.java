@@ -3,7 +3,8 @@ package myGame.domain.item;
 public enum ItemType {
 
     HEALTH_POTION("Health Potion"),
-    POTATO("Potato");
+    POTATO("Potato"),
+    KNIFE("Knife");
 
     private String name;
 

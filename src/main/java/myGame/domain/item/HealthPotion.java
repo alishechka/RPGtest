@@ -4,7 +4,9 @@ public class HealthPotion implements Item {
     private String name = ItemType.HEALTH_POTION.getName();
     private String effect = "gain 25HP";
     private int quantity = 1;
-    private int value = 25;
+    private int hpBonus = 25;
+    private int defBonus = 0;
+    private int dmgBonus = 0;
 
     @Override
     public String getName() {
@@ -12,8 +14,8 @@ public class HealthPotion implements Item {
     }
 
     @Override
-    public int getValue() {
-        return value;
+    public int getHpBonus() {
+        return hpBonus;
     }
 
     @Override
@@ -29,5 +31,15 @@ public class HealthPotion implements Item {
     @Override
     public String getEffect() {
         return effect;
+    }
+
+    @Override
+    public int getDefBonus() {
+        return defBonus;
+    }
+
+    @Override
+    public int getDmgBonus() {
+        return dmgBonus;
     }
 }

@@ -17,7 +17,7 @@ public class UseItemService {
         if (num == 1) {
             if (hpit.getQuantity() > 0) {
                 System.out.println("You use " + hpit.getName() + " and " + hpit.getEffect());
-                player.setHP(player.getHP() + hpit.getValue());
+                player.setHP(player.getHP() + hpit.getHpBonus());
                 hpit.setQuantity(hpit.getQuantity() - 1);
             } else {
                 System.out.println("No potions left :(");
@@ -25,7 +25,7 @@ public class UseItemService {
         } else if (num == 2) {
             if (pttit.getQuantity() > 0) {
                 System.out.println("You use " + pttit.getName() + " and " + pttit.getEffect());
-                player.setHP(player.getHP() + pttit.getValue());
+                player.setHP(player.getHP() + pttit.getHpBonus());
                 pttit.setQuantity(pttit.getQuantity() - 1);
             }else {
                 System.out.println("No potions left :(");

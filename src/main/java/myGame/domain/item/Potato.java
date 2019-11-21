@@ -4,7 +4,9 @@ public class Potato implements Item {
     private String name = ItemType.POTATO.getName();
     private String effect = "gain 5HP";
     private int quantity = 5;
-    private int value = 5;
+    private int hpBonus = 5;
+    private int defBonus = 0;
+    private int dmgBonus = 0;
 
     @Override
     public String getName() {
@@ -12,8 +14,8 @@ public class Potato implements Item {
     }
 
     @Override
-    public int getValue() {
-        return value;
+    public int getHpBonus() {
+        return hpBonus;
     }
 
     @Override
@@ -29,5 +31,15 @@ public class Potato implements Item {
     @Override
     public String getEffect() {
         return effect;
+    }
+
+    @Override
+    public int getDefBonus() {
+        return defBonus;
+    }
+
+    @Override
+    public int getDmgBonus() {
+        return dmgBonus;
     }
 }

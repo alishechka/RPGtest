@@ -1,13 +1,17 @@
-package myGame.domain.equipment;
+package myGame.domain.item;
 
-import myGame.domain.item.ItemType;
+public class Knife implements Item{
+    private String name = ItemType.KNIFE.getName();
+    private String effect = "stab stab stab";
+    private int quantity = 1;
+    private int hpBonus = 0;
+    private int defBonus = 1;
+    private int dmgBonus = 5;
 
-public class Sword implements Equipment {
-    private String name = EquipmentType.SWORD.getName();
-    private int hpBonus=0;
-    private int defBonus=5;
-    private int dmgBonus=15;
-    private int quantity=1;
+    @Override
+    public String getName() {
+        return name;
+    }
 
     @Override
     public int getQuantity() {
@@ -20,8 +24,8 @@ public class Sword implements Equipment {
     }
 
     @Override
-    public String getName() {
-        return name;
+    public String getEffect() {
+        return effect;
     }
 
     @Override

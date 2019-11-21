@@ -3,10 +3,7 @@ package myGame.service;
 import java.util.*;
 
 import myGame.domain.enemy.Enemy;
-import myGame.domain.equipment.Equipment;
-import myGame.domain.equipment.EquipmentType;
 import myGame.factory.EnemyFactory;
-import myGame.factory.EquipmentFactory;
 import myGame.factory.ItemFactory;
 
 public class App {
@@ -16,7 +13,6 @@ public class App {
         FightService fightService = new FightService(lootService);
         Player player = new Player();
         Enemy enemy = EnemyFactory.getRandomEnemy();
-
 
         boolean game = true;
 
@@ -42,6 +38,7 @@ public class App {
                 System.out.println("3 for item check");
                 System.out.println("4 for equip sword");
                 System.out.println("5 for Status");
+                System.out.println("6 for TEST");
                 int input = sc.nextInt();
                 if (input == 1) {
                     fightService.fight(player, enemy);
@@ -52,13 +49,14 @@ public class App {
                 } else if (input == 3) {
                     System.out.println("You have:");
                     ItemFactory.getInventory();
-                    EquipmentFactory.getInventory();
                     System.out.println("\n");
                 } else if (input == 4) {
                     UseEquipmentService.equipEquipment(player);
 
                 } else if (input == 5) {
                     player.getStatus();
+                } else if (input == 6) {
+                    ItemFactory.useInventory();
                 } else {
                     System.out.println("wrong command");
                 }
