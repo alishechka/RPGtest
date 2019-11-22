@@ -34,29 +34,20 @@ public class App {
                 System.out.println("your HP is " + player.getHP());
                 System.out.println("ATTACK");
                 System.out.println("1 for attack");
-                System.out.println("2 for item use");
-                System.out.println("3 for item check");
-                System.out.println("4 for equip sword");
-                System.out.println("5 for Status");
-                System.out.println("6 for TEST");
+                System.out.println("2 for item check");
+                System.out.println("3 for Status");
+                System.out.println("4 for item use");
                 int input = sc.nextInt();
                 if (input == 1) {
                     fightService.fight(player, enemy);
                 } else if (input == 2) {
-                    UseItemService.listItems();
-                    int inputItem = sc.nextInt();
-                    UseItemService.useItem(player, inputItem);
-                } else if (input == 3) {
                     System.out.println("You have:");
                     ItemFactory.getInventory();
                     System.out.println("\n");
-                } else if (input == 4) {
-                    UseEquipmentService.equipEquipment(player);
-
-                } else if (input == 5) {
+                } else if (input == 3) {
                     player.getStatus();
-                } else if (input == 6) {
-                    ItemFactory.useInventory();
+                } else if (input == 4) {
+                    UseEquipmentService.equipTest(player);
                 } else {
                     System.out.println("wrong command");
                 }
