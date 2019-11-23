@@ -7,6 +7,8 @@ public interface Item {
     int hpBonus = 0;
     int defBonus = 0;
     int dmgBonus = 0;
+    int itemLevel=0;
+
 
     String getName();
     int getQuantity();
@@ -15,4 +17,5 @@ public interface Item {
     int getHpBonus();
     int getDefBonus();
     int getDmgBonus();
+    int getItemLevel();
 }

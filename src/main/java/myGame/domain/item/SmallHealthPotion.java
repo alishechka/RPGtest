@@ -1,16 +1,16 @@
 package myGame.domain.item;
 
-public class Knife implements Item{
-    private String name = ItemType.KNIFE.getName();
-    private String effect = "stab stab stab";
+public class SmallHealthPotion implements Item {
+    private String name = ItemType.SMALL_HEALTH_POTION.getName();
+    private String effect = "gain 25HP";
     private int quantity = 1;
-    private int hpBonus = 0;
-    private int defBonus = 1;
-    private int dmgBonus = 5;
+    private int hpBonus = 25;
+    private int defBonus = 0;
+    private int dmgBonus = 0;
     private int itemLevel=1;
 
     @Override
-    public int getItemLevel() {
+    public int getItemLevel(){
         return itemLevel;
     }
 
@@ -20,23 +20,23 @@ public class Knife implements Item{
     }
 
     @Override
+    public int getHpBonus() {
+        return hpBonus;
+    }
+
+    @Override
     public int getQuantity() {
         return quantity;
     }
 
     @Override
     public void setQuantity(int quantity) {
-        this.quantity=quantity;
+        this.quantity = quantity;
     }
 
     @Override
     public String getEffect() {
         return effect;
-    }
-
-    @Override
-    public int getHpBonus() {
-        return hpBonus;
     }
 
     @Override

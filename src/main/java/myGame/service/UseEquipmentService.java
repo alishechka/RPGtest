@@ -27,13 +27,16 @@ public class UseEquipmentService {
         }
         Scanner sc = new Scanner(System.in);
         int input = sc.nextInt();
-        chooseItem(input, itemList, player);
-
+        if(input<=itemList.size()) {
+            chooseItem(input, itemList, player);
+        }else{
+            System.out.println("wrong command");
+        }
     }
 
     public static void chooseItem(int num, List<Item> itemList, Player player) {
         num -= 1;
-        System.out.println("you've equipped " + itemList.get(num).getName());
+        System.out.println("you've used " + itemList.get(num).getName());
         player.setHP(player.getHP() + itemList.get(num).getHpBonus());
         player.setDMG(player.getDMG() + itemList.get(num).getDmgBonus());
         player.setDEF(player.getDEF() + itemList.get(num).getDefBonus());

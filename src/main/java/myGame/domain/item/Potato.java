@@ -7,6 +7,12 @@ public class Potato implements Item {
     private int hpBonus = 5;
     private int defBonus = 0;
     private int dmgBonus = 0;
+    private int itemLevel=1;
+
+    @Override
+    public int getItemLevel() {
+        return itemLevel;
+    }
 
     @Override
     public String getName() {

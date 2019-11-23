@@ -4,6 +4,12 @@ public class Bear implements Enemy {
     private int HP = 100;
     private int DMG = 10;
     private int dropChance = 70;
+    private int enemyLevel=3;
+
+    @Override
+    public int getEnemyLevel() {
+        return enemyLevel;
+    }
 
     @Override
     public int getDropChance() {

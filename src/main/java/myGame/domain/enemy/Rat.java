@@ -6,6 +6,12 @@ public class Rat implements Enemy {
     private int HP = 20;
     private int DMG = 2;
     private int dropChance = 10;
+    int enemyLevel = 1;
+
+    @Override
+    public int getEnemyLevel() {
+        return enemyLevel;
+    }
 
     @Override
     public int getDropChance() {

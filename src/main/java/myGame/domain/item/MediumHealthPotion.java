@@ -1,12 +1,18 @@
 package myGame.domain.item;
 
-public class HealthPotion implements Item {
-    private String name = ItemType.HEALTH_POTION.getName();
-    private String effect = "gain 25HP";
-    private int quantity = 1;
-    private int hpBonus = 25;
+public class MediumHealthPotion implements Item{
+    private String name = ItemType.MEDIUM_HEALTH_POTION.getName();
+    private String effect = "gain 50HP";
+    private int quantity = 0;
+    private int hpBonus = 50;
     private int defBonus = 0;
     private int dmgBonus = 0;
+    private int itemLevel=2;
+
+    @Override
+    public int getItemLevel() {
+        return itemLevel;
+    }
 
     @Override
     public String getName() {
