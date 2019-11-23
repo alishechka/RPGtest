@@ -18,7 +18,8 @@ public class FightService {
     public void assertIfEnemyIsDefeated(Enemy enemy) {
         if (enemy.getHP() < 1) {
             System.out.println("YOU HAVE DEFEATED " + enemy.getName());
-            lootService.lootDrop(enemy);
+//            lootService.lootDrop(enemy);
+            lootService.lootTEST(enemy);
         }
     }
 }

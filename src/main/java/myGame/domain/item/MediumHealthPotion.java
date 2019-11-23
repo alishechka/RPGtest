@@ -7,7 +7,7 @@ public class MediumHealthPotion implements Item{
     private int hpBonus = 50;
     private int defBonus = 0;
     private int dmgBonus = 0;
-    private int itemLevel=2;
+    private int itemLevel=3;
 
     @Override
     public int getItemLevel() {

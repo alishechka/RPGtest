@@ -7,7 +7,7 @@ public class SmallHealthPotion implements Item {
     private int hpBonus = 25;
     private int defBonus = 0;
     private int dmgBonus = 0;
-    private int itemLevel=1;
+    private int itemLevel=2;
 
     @Override
     public int getItemLevel(){

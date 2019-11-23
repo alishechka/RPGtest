@@ -5,7 +5,7 @@ public enum ItemType {
     SMALL_HEALTH_POTION("Small Health Potion"),
     POTATO("Potato"),
     KNIFE("Knife"),
-    MEDIUM_HEALTH_POTION(" Medium Heath Potion");
+    MEDIUM_HEALTH_POTION("Medium Health Potion");
 
 
     private String name;
